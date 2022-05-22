@@ -10,6 +10,7 @@ import { ToastContainer } from 'react-toastify';
 import ContactUs from './Pages/ContactUs/ContactUs';
 import Login from './Pages/Login/Login';
 import SignUp from './Pages/Login/SignUp';
+import PagenotFound from './Pages/Shared/PagenotFound';
 function App() {
   useEffect(() => {
     AOS.init();
@@ -24,6 +25,7 @@ function App() {
         <Route path='/contactus' element={<ContactUs />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
+        <Route path='*' element={<PagenotFound />}></Route>
       </Routes>
       <ToastContainer />
     </div>

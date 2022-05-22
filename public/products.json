@@ -1,17 +1,17 @@
 [
     {
-        "_id": "6289be0bea1b6065b4b1efc7",
-        "name": "single countershaft",
-        "picture": "https://i.ibb.co/g6Kvnr8/parts1.jpg",
-        "description": "A countershaft is a set of helical gears and shaft cast out of a single piece of hardened steel. It transfers power flow from the input shaft drive gear to the gears on the output shaft. The gears and the countershaft rotate as one and are a one-piece assembly.",
+        "_id": "6289be0bba32c89b049d5982",
+        "name": "Bearing",
+        "picture": "https://i.ibb.co/h24HGjW/parts5.jpg",
+        "description": "Nowadays, bearings are one of the most commonly used machine parts because their rolling motion make almost all movements easier and they help reduce friction. Bearings have two key functions: They transfer motion, i.e. they support and guide components which turn relative to one another. They transmit forces.",
         "minimumOrderQuantity": 500,
         "availableQuantity": 20000,
-        "price": 201
+        "price": 274
     },
     {
         "_id": "6289be0b2893e3774c12c49c",
         "name": "Disc Clutch",
-        "picture": "https://i.ibb.co/hCFW5wR/parts2.webp",
+        "picture": "https://i.ibb.co/LZMkG3Z/parts2.png",
         "description": "The disc drives the input shaft in the transmission which translates movement at the wheels. The disc has a sacrificial friction material that allows the clutch to be modulated in order to control the drive when taking off from a standing start.",
         "minimumOrderQuantity": 500,
         "availableQuantity": 20000,
@@ -36,13 +36,13 @@
         "price": 429
     },
     {
-        "_id": "6289be0bba32c89b049d5982",
-        "name": "Bearing",
-        "picture": "https://i.ibb.co/h24HGjW/parts5.jpg",
-        "description": "Nowadays, bearings are one of the most commonly used machine parts because their rolling motion make almost all movements easier and they help reduce friction. Bearings have two key functions: They transfer motion, i.e. they support and guide components which turn relative to one another. They transmit forces.",
+        "_id": "6289be0bea1b6065b4b1efc7",
+        "name": "single countershaft",
+        "picture": "https://i.ibb.co/YcVFWyq/parts1.png",
+        "description": "A countershaft is a set of helical gears and shaft cast out of a single piece of hardened steel. It transfers power flow from the input shaft drive gear to the gears on the output shaft. The gears and the countershaft rotate as one and are a one-piece assembly.",
         "minimumOrderQuantity": 500,
         "availableQuantity": 20000,
-        "price": 274
+        "price": 201
     },
     {
         "_id": "6289be0baf7fa40b33569b8a",

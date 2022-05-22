@@ -6,6 +6,7 @@ import Home from './Pages/Home/Home';
 import Navbar from './Pages/Shared/Navbar';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { ToastContainer } from 'react-toastify';
 function App() {
   useEffect(() => {
     AOS.init();
@@ -17,6 +18,7 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
       </Routes>
+      <ToastContainer />
     </div>
   );
 }

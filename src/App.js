@@ -9,6 +9,7 @@ import 'aos/dist/aos.css';
 import { ToastContainer } from 'react-toastify';
 import ContactUs from './Pages/ContactUs/ContactUs';
 import Login from './Pages/Login/Login';
+import SignUp from './Pages/Login/SignUp';
 function App() {
   useEffect(() => {
     AOS.init();
@@ -18,9 +19,11 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/contactus' element={<ContactUs />}></Route>
         <Route path='/login' element={<Login />}></Route>
+        <Route path='/signup' element={<SignUp />}></Route>
       </Routes>
       <ToastContainer />
     </div>

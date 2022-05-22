@@ -9,7 +9,7 @@ const ContactUs = () => {
     return (
         <section data-aos="fade-down"
             data-aos-easing="linear"
-            data-aos-duration="1500">
+            data-aos-duration="1500" className='mb-10'>
             <div className='text-center'>
                 <h3 className='text-primary  text-4xl font-bold 		 uppercase mb-10'>Contact Us</h3>
             </div>

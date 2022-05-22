@@ -1,0 +1,56 @@
+[
+    {
+        "_id": "6289be0bea1b6065b4b1efc7",
+        "name": "single countershaft",
+        "picture": "https://i.ibb.co/g6Kvnr8/parts1.jpg",
+        "description": "A countershaft is a set of helical gears and shaft cast out of a single piece of hardened steel. It transfers power flow from the input shaft drive gear to the gears on the output shaft. The gears and the countershaft rotate as one and are a one-piece assembly.",
+        "minimumOrderQuantity": 500,
+        "availableQuantity": 20000,
+        "price": 201
+    },
+    {
+        "_id": "6289be0b2893e3774c12c49c",
+        "name": "Disc Clutch",
+        "picture": "https://i.ibb.co/hCFW5wR/parts2.webp",
+        "description": "The disc drives the input shaft in the transmission which translates movement at the wheels. The disc has a sacrificial friction material that allows the clutch to be modulated in order to control the drive when taking off from a standing start.",
+        "minimumOrderQuantity": 500,
+        "availableQuantity": 20000,
+        "price": 347
+    },
+    {
+        "_id": "6289be0bc0f18c91275498f8",
+        "name": "Iridium spark plugs",
+        "picture": "https://i.ibb.co/4FQscns/parts3.jpg",
+        "description": "Greater engine power from iridium spark plugs. The spark plug manufacturers are unanimous about the fact that iridium spark plugs can considerably improve the engine power. The advantage is crucial when you need to navigate through difficult driving situations or climb steep slopes.",
+        "minimumOrderQuantity": 500,
+        "availableQuantity": 20000,
+        "price": 200
+    },
+    {
+        "_id": "6289be0bf71a08fb4aa8fb51",
+        "name": "Ac gear motor",
+        "picture": "https://i.ibb.co/vQJCPCW/parts4.jpg",
+        "description": "The most common type of AC motors is the induction motor. These motors are a viable power source for several applications due to their: Efficiency: AC induction motors are an efficient power sources for many applications.",
+        "minimumOrderQuantity": 500,
+        "availableQuantity": 20000,
+        "price": 429
+    },
+    {
+        "_id": "6289be0bba32c89b049d5982",
+        "name": "Bearing",
+        "picture": "https://i.ibb.co/h24HGjW/parts5.jpg",
+        "description": "Nowadays, bearings are one of the most commonly used machine parts because their rolling motion make almost all movements easier and they help reduce friction. Bearings have two key functions: They transfer motion, i.e. they support and guide components which turn relative to one another. They transmit forces.",
+        "minimumOrderQuantity": 500,
+        "availableQuantity": 20000,
+        "price": 274
+    },
+    {
+        "_id": "6289be0baf7fa40b33569b8a",
+        "name": "Tire",
+        "picture": "https://i.ibb.co/KwvR3kJ/parts6.jpg",
+        "description": "The two-digit number after the slash mark in a tire size is the aspect ratio. For example, in a size P215/65 R15 tire, the 65 means that the height is equal to 65% of the tire's width. The bigger the aspect ratio, the bigger the tire's sidewall will be.",
+        "minimumOrderQuantity": 500,
+        "availableQuantity": 20000,
+        "price": 281
+    }
+]

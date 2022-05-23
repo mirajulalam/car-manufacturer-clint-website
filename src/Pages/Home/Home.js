@@ -5,6 +5,7 @@ import BusinessSummary from './BusinessSummary';
 import ContactUs from './ContactUs';
 import Parts from './Parts';
 import ProductDescription from './ProductDescription';
+import Reviews from './Reviews';
 
 const Home = () => {
     return (
@@ -12,6 +13,7 @@ const Home = () => {
             <Banner />
             <Parts />
             <BusinessSummary />
+            <Reviews />
             <ProductDescription />
             <ContactUs />
             <Footer />

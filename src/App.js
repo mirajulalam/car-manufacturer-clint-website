@@ -11,6 +11,8 @@ import ContactUs from './Pages/ContactUs/ContactUs';
 import Login from './Pages/Login/Login';
 import SignUp from './Pages/Login/SignUp';
 import PagenotFound from './Pages/Shared/PagenotFound';
+import PurchasePage from './Pages/PurchasePage/PurchasePage';
+import PrivateRoute from './Pages/Shared/PrivateRoute';
 function App() {
   useEffect(() => {
     AOS.init();
@@ -21,6 +23,11 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
+        <Route path='/product/:productId' element={
+          <PrivateRoute>
+            <PurchasePage />
+          </PrivateRoute>
+        }></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/contactus' element={<ContactUs />}></Route>
         <Route path='/login' element={<Login />}></Route>

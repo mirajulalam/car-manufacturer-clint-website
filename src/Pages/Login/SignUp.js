@@ -1,6 +1,6 @@
 import React from 'react';
 import auth from '../../firebase.init';
-import { useSignInWithGoogle, useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithGoogle, useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import Loading from '../Shared/Loading';
@@ -14,20 +14,23 @@ const SignUp = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
 
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+
 
     const navigate = useNavigate();
     let errorMessage;
-    if (error || gError) {
-        errorMessage = <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
+    if (error || gError || updateError) {
+        errorMessage = <p className='text-red-500'><small>{error?.message || gError?.message || updateError?.message}</small></p>
     }
-    if (loading || gLoading) {
+    if (loading || gLoading || updating) {
         return <Loading></Loading>
     }
     if (user || gUser) {
         navigate('/home')
     }
     const onSubmit = async data => {
-        createUserWithEmailAndPassword(data.email, data.password);
+        await createUserWithEmailAndPassword(data.email, data.password);
+        await updateProfile({ displayName: data.name });
         reset();
     };
     return (
@@ -104,6 +107,7 @@ const SignUp = () => {
                                 {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
                             </label>
                         </div>
+
                         {errorMessage}
                         <input className='btn w-full max-w-xs btn-primary text-white' type="submit" value="Sign Up" />
                     </form>

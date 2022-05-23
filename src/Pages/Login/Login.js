@@ -3,6 +3,7 @@ import auth from '../../firebase.init';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
+import { toast } from 'react-toastify';
 import Loading from '../Shared/Loading';
 const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -43,10 +44,10 @@ const Login = () => {
         const email = getValues('email')
         if (email) {
             await sendPasswordResetEmail(email);
-            alert('Sent email');
+            toast('Sent email');
         }
         else {
-            alert('please enter your email address')
+            toast('please enter your email address')
         }
     }
     return (

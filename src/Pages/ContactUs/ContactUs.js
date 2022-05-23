@@ -1,9 +1,10 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 
 const ContactUs = () => {
     const handleSubmit = event => {
         event.preventDefault();
-        alert('Thanks for your information')
+        toast('Thanks for your information')
         event.target.reset();
     }
     return (

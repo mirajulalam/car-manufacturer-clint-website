@@ -5,6 +5,7 @@ import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWith
 import { useForm } from "react-hook-form";
 import { toast } from 'react-toastify';
 import Loading from '../Shared/Loading';
+import useToken from '../../hooks/useToken';
 const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit, getValues, reset } = useForm();
@@ -15,6 +16,8 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
+    const [token] = useToken(user || gUser)
+
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(
         auth
     );
@@ -23,7 +26,7 @@ const Login = () => {
 
     let from = location.state?.from?.pathname || "/";
 
-    if (user || gUser) {
+    if (token) {
         navigate(from, { replace: true })
     }
 

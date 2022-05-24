@@ -11,7 +11,6 @@ const AddAReview = () => {
             email: data.email,
             reviewText: data.reviewText,
         }
-
         fetch("http://localhost:5000/review", {
             method: "POST",
             headers: {
@@ -24,7 +23,7 @@ const AddAReview = () => {
         })
     };
     return (
-        <div className='justify-center items-center'>
+        <div>
             <h2 className="text-4xl font-bold text-primary">Add a Review</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-control w-full max-w-xs">
@@ -42,10 +41,6 @@ const AddAReview = () => {
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
-
-
-
-
                     <label className="label">
                         <span className="label-text">Name</span>
                     </label>
@@ -63,7 +58,6 @@ const AddAReview = () => {
                         {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
                     </label>
                 </div>
-
                 <div className="form-control w-full max-w-xs">
                     <label className="label">
                         <span className="label-text">Email</span>

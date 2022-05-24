@@ -9,6 +9,7 @@ const Navbar = () => {
     const [user, loading] = useAuthState(auth);
     const logOut = () => {
         signOut(auth)
+        localStorage.removeItem('accessToken')
     }
 
     if (loading) {

@@ -17,7 +17,9 @@ import PrivateRoute from './Pages/Shared/PrivateRoute';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import MyOrders from './Pages/Dashboard/MyOrders';
 import AddAReview from './Pages/Dashboard/AddAReview';
+import Payment from './Pages/Dashboard/Payment';
 import MyProfile from './Pages/Dashboard/MyProfile';
+import Users from './Pages/Dashboard/Users';
 function App() {
   useEffect(() => {
     AOS.init();
@@ -40,7 +42,9 @@ function App() {
         }>
           <Route index element={<MyProfile></MyProfile>}></Route>
           <Route path='review' element={<AddAReview></AddAReview>}></Route>
+          <Route path='payment/:id' element={<Payment></Payment>}></Route>
           <Route path='order' element={<MyOrders></MyOrders>}></Route>
+          <Route path='users' element={<Users></Users>}></Route>
         </Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/contactus' element={<ContactUs />}></Route>

@@ -1,16 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from './../../firebase.init';
 
 const MyOrders = () => {
     const [orders, setOrders] = useState([]);
-    const [user] = useAuthState(auth)
+    const [user] = useAuthState(auth);
+
+    const navigate = useNavigate()
 
     useEffect(() => {
-        fetch(`http://localhost:5000/order?email=${user?.email}`)
-            .then(res => res.json())
-            .then(data => setOrders(data))
-    }, [user, orders]);
+        if (user) {
+            fetch(`http://localhost:5000/order/${user?.email}`, {
+                method: "GET",
+                headers: {
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            })
+                .then(res => res.json())
+                .then(data => {
+                    setOrders(data)
+                })
+        }
+    }, [user, navigate, orders]);
 
     const handleDelete = id => {
         const checkout = window.confirm('Are you sure you want to delete products');
@@ -22,9 +34,7 @@ const MyOrders = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log('deleted product item', data);
                     alert('Are you sure you want to delete your product')
-                    setOrders()
                 })
         }
     }
@@ -48,7 +58,12 @@ const MyOrders = () => {
                                 <th>{index + 1}</th>
                                 <td>{o.userName}</td>
                                 <td>{o.name}</td>
-                                <td>{o.price}</td>
+                                <td>
+                                    {(o.price && !o.paid) && <Link to={`/dashboard/payment/${o._id}`}><button className='btn btn-xs btn-success'>Pay</button></Link>}
+                                    {(o.price && o.paid) && <span className='text-success'>Paid</span>}
+                                </td>
+
+
                                 <td><button onClick={() => handleDelete(o._id)} class="btn btn-error btn-outline">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
                                 </button></td>

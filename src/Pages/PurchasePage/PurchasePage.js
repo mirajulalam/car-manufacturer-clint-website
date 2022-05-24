@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from './../../firebase.init';
 import Loading from './../Shared/Loading';
+import { toast } from 'react-toastify';
 
 const PurchasePage = () => {
     const [user, loading] = useAuthState(auth);
@@ -54,6 +55,15 @@ const PurchasePage = () => {
         })
             .then(res => res.json())
             .then(data => {
+                if (data.insertedId) {
+                    toast('Product purchase successfully')
+                }
+                else {
+                    toast('Product purchase not failed')
+                }
+                const newquantity = product.availableQuantity - quantity;
+                console.log(newquantity)
+                event.target.reset()
                 console.log(data);
 
             })
@@ -94,9 +104,14 @@ const PurchasePage = () => {
 
                         </div>
                         <select name='quantiy' class="select select-bordered w-full max-w-xs">
-                            <option>50</option>
-                            <option>100</option>
-                            <option>200</option>
+                            <option>300</option>
+                            <option>500</option>
+                            <option>1000</option>
+                            <option>5000</option>
+                            <option>8000</option>
+                            <option>15000</option>
+                            <option>20000</option>
+                            <option>21000</option>
                         </select>
                         <input type="text" required name='address' placeholder="address" class="input input-bordered" />
                         <input type="text" required name='phone' placeholder="phone number" class="input input-bordered" />

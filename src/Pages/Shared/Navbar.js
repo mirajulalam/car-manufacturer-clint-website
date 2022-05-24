@@ -16,10 +16,10 @@ const Navbar = () => {
     }
     const menuItems = <>
         <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/blogs">Blogs</NavLink></li>
-        <li><NavLink to="/contactus">Contact</NavLink></li>
+        <li><NavLink to="/blogs" >Blogs</NavLink></li>
+        <li><NavLink to="/contactus ">Contact</NavLink></li>
         {
-            user && <li><NavLink to="/dashboard">Dashboard</NavLink></li>
+            user && <li  ><NavLink to="/dashboard">Dashboard</NavLink></li>
         }
         <li>
             {user ? <button onClick={logOut} className="btn btn-ghost font-normal normal-case"  >Sign Out</button> : <NavLink to="/login">Login</NavLink>}

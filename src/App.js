@@ -38,9 +38,9 @@ function App() {
             <Dashboard />
           </PrivateRoute>
         }>
-          <Route index element={<MyOrders></MyOrders>}></Route>
+          <Route index element={<MyProfile></MyProfile>}></Route>
           <Route path='review' element={<AddAReview></AddAReview>}></Route>
-          <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>
+          <Route path='order' element={<MyOrders></MyOrders>}></Route>
         </Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/contactus' element={<ContactUs />}></Route>

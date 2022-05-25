@@ -5,10 +5,9 @@ import user3 from '../../assets/review3.jfif';
 import Review from './Review';
 const Reviews = () => {
     const [reviews, setReviews] = useState([]);
-    console.log(reviews);
 
     useEffect(() => {
-        fetch('http://localhost:5000/review')
+        fetch('https://tranquil-anchorage-32269.herokuapp.com/review')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])

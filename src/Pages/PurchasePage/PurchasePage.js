@@ -11,7 +11,7 @@ const PurchasePage = () => {
     const [product, setProdut] = useState({});
 
     useEffect(() => {
-        const url = `http://localhost:5000/product/${productId}`;
+        const url = `https://tranquil-anchorage-32269.herokuapp.com/product/${productId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProdut(data))
@@ -46,7 +46,7 @@ const PurchasePage = () => {
         }
 
 
-        fetch('http://localhost:5000/order', {
+        fetch('https://tranquil-anchorage-32269.herokuapp.com/order', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -59,7 +59,7 @@ const PurchasePage = () => {
                     toast('Product purchase successfully')
                 }
                 else {
-                    toast('Product purchase not failed')
+                    toast('Product purchase failed')
                 }
                 const newquantity = product.availableQuantity - quantity;
                 console.log(newquantity)

@@ -21,6 +21,8 @@ import Payment from './Pages/Dashboard/Payment';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import Users from './Pages/Dashboard/Users';
 import PrivateAdmin from './Pages/Shared/PrivateAdmin';
+import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
+import AddAProduct from './Pages/Dashboard/AddAProduct';
 function App() {
   useEffect(() => {
     AOS.init();
@@ -46,9 +48,11 @@ function App() {
           <Route path='payment/:id' element={<Payment></Payment>}></Route>
           <Route path='order' element={<MyOrders></MyOrders>}></Route>
           <Route path='users' element={<PrivateAdmin><Users></Users></PrivateAdmin>}></Route>
+          <Route path='addaproduct' element={<PrivateAdmin><AddAProduct /></PrivateAdmin>}></Route>
         </Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/contactus' element={<ContactUs />}></Route>
+        <Route path='/myportfolio' element={<MyPortfolio />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
         <Route path='*' element={<PagenotFound />}></Route>

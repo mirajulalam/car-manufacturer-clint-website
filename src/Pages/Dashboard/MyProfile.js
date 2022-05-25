@@ -8,13 +8,39 @@ const MyProfile = () => {
     const handleUpdate = event => {
         event.preventDefault();
         console.log('hello', event);
+        const name = event.target.name.value;
+        const email = event.target.email.value;
+        const education = event.target.education.value;
+        const location = event.target.location.value;
+        const link = event.target.link.value;
+
+        const userDetails = {
+            name,
+            email,
+            education,
+            location,
+            link
+        }
+
+        fetch('http://localhost:5000/userdetail', {
+            method: "PUT",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(userDetails)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+
+            })
     }
     return (
         <section data-aos="fade-down"
             data-aos-easing="linear"
             data-aos-duration="1500" className='mb-10'>
             <div className='text-center'>
-                <h3 className='text-secondary  text-4xl font-bold 		 uppercase mb-10'>My profile</h3>
+                <h3 className='text-secondary  text-4xl font-bold 		 uppercase mb-10 mt-5 '>My profile</h3>
             </div>
             <div className='text-center'>
                 <form onSubmit={handleUpdate}>
@@ -26,6 +52,9 @@ const MyProfile = () => {
                         required />
                     <br />
                     <input className='p-3 mb-4 rounded w-5/12 border-2' type="text" name="location" id="" placeholder='Your location'
+                        required />
+                    <br />
+                    <input className='p-3 mb-4 rounded w-5/12 border-2' type="text" name="link" id="" placeholder='Link'
                         required />
                     <br />
 

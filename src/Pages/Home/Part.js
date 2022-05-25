@@ -20,7 +20,7 @@ const Part = ({ part }) => {
                 <p>MinimumOrderQuantity: {minimumOrderQuantity}</p>
                 <p>AvailableQuantity: {availableQuantity}</p>
                 <div class="card-actions text-center">
-                    <button onClick={() => handleNavigateParams(_id)} class="btn btn-outline btn-primary">Purchase</button>
+                    <button onClick={() => handleNavigateParams(_id)} class="btn btn-outline btn-primary">Buy Now</button>
                 </div>
             </div>
         </div>

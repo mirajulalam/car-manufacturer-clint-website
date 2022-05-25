@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from './../../firebase.init';
 
 const MyOrders = () => {
@@ -11,7 +12,7 @@ const MyOrders = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/order/${user?.email}`, {
+            fetch(`https://tranquil-anchorage-32269.herokuapp.com/order/${user?.email}`, {
                 method: "GET",
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -27,14 +28,14 @@ const MyOrders = () => {
     const handleDelete = id => {
         const checkout = window.confirm('Are you sure you want to delete products');
         if (checkout) {
-            const url = `http://localhost:5000/order/${id}`;
+            const url = `https://tranquil-anchorage-32269.herokuapp.com/order/${id}`;
             console.log(url);
             fetch(url, {
                 method: "DELETE",
             })
                 .then(res => res.json())
                 .then(data => {
-                    alert('Are you sure you want to delete your product')
+                    toast('product delete successfull')
                 })
         }
     }

@@ -3,22 +3,20 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { NavLink } from 'react-router-dom';
 import auth from '../../firebase.init';
-import Loading from './Loading';
 
 const Navbar = () => {
-    const [user, loading] = useAuthState(auth);
+    const [user] = useAuthState(auth);
     const logOut = () => {
         signOut(auth)
         localStorage.removeItem('accessToken')
     }
 
-    if (loading) {
-        return <Loading />
-    }
+
     const menuItems = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/blogs" >Blogs</NavLink></li>
         <li><NavLink to="/contactus ">Contact</NavLink></li>
+        <li><NavLink to="/myportfolio ">MyPortfolio</NavLink></li>
         {
             user && <li  ><NavLink to="/dashboard">Dashboard</NavLink></li>
         }

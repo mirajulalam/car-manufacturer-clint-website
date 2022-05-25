@@ -83,26 +83,28 @@ const PurchasePage = () => {
                 <div class="text-center lg:text-left">
                     <img src={product.picture} alt="" className='w-52' />
                     <p class="py-6">Name: {product.name}</p>
-                    <p class="py-6">description: {product.description}</p>
+                    <p class="py-6">{product.description}</p>
                     <p class="py-6">minimumOrderQuantity: {product.minimumOrderQuantity}</p>
                     <p class="py-6">availableQuantity: {product.availableQuantity}</p>
                     <p class="py-6">price: {product.price}</p>
                 </div>
-                <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                <div class="card flex-shrink-0 w-full max-w-sm shadow-xl bg-base-100">
                     <form onSubmit={handleSubmit} class="card-body">
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text">name</span>
+                            </label>
+                            <input type="text" readOnly value={user?.displayName} placeholder="name" class="input input-bordered" />
+                        </div>
                         <div class="form-control">
                             <label class="label">
                                 <span class="label-text">Email</span>
                             </label>
                             <input type="text" placeholder="email" value={user?.email} class="input input-bordered" readOnly />
                         </div>
-                        <div class="form-control">
-                            <label class="label">
-                                <span class="label-text">Password</span>
-                            </label>
-                            <input type="text" readOnly value={user?.displayName} placeholder="password" class="input input-bordered" />
-
-                        </div>
+                        <label class="label">
+                            <span class="label-text">Quantity</span>
+                        </label>
                         <select name='quantiy' class="select select-bordered w-full max-w-xs">
                             <option>300</option>
                             <option>500</option>
@@ -113,8 +115,9 @@ const PurchasePage = () => {
                             <option>20000</option>
                             <option>21000</option>
                         </select>
+
                         <input type="text" required name='address' placeholder="address" class="input input-bordered" />
-                        <input type="text" required name='phone' placeholder="phone number" class="input input-bordered" />
+                        <input type="number" required name='phone' placeholder="phone number" class="input input-bordered" />
                         <div class="form-control mt-6">
                             <button type='submit' class="btn btn-primary">purchases</button>
                         </div>

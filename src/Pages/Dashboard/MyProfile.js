@@ -32,7 +32,6 @@ const MyProfile = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-
             })
     }
     return (
@@ -40,7 +39,7 @@ const MyProfile = () => {
             data-aos-easing="linear"
             data-aos-duration="1500" className='mb-10'>
             <div className='text-center'>
-                <h3 className='text-secondary  text-4xl font-bold 		 uppercase mb-10 mt-5 '>My profile</h3>
+                <h3 className='text-secondary  text-4xl font-bold uppercase mb-10 mt-5 '>My profile</h3>
             </div>
             <div className='text-center'>
                 <form onSubmit={handleUpdate}>

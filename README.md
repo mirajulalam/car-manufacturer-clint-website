@@ -1,7 +1,21 @@
 # Getting Started with Create React App
 
 
+# Car-Parts-Manufacturer
+
 live websit link https://car-parts-manufacturer.web.app/
+
+# ➡ My website car parts manufacturer.
+# ➡ My website home page header,banner,our product, our product create descrption, and contact us form, footer.
+# ➡ My website user product buy now button press user will be product order.
+# ➡ My website dashboard my order page user will check user order product and the the payment option user will be payment confirm.
+# ➡ My website dashboard admin pages admin will user admin create.
+# ➡ My website blogs page react question answer.
+# ➡ at last login and logout option and toggle.and full website responsive design.
+
+# website description
+my website car parts manufacturer car parts create.car parts sell for client.user will be order car parts and minimumorder and maximumorder user will be order.payment system for user earn.
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

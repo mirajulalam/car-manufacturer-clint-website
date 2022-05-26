@@ -23,6 +23,8 @@ import Users from './Pages/Dashboard/Users';
 import PrivateAdmin from './Pages/Shared/PrivateAdmin';
 import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 import AddAProduct from './Pages/Dashboard/AddAProduct';
+import Footer from './Pages/Shared/Footer';
+import ManageProducts from './Pages/Dashboard/ManageProducts';
 function App() {
   useEffect(() => {
     AOS.init();
@@ -49,6 +51,7 @@ function App() {
           <Route path='order' element={<MyOrders></MyOrders>}></Route>
           <Route path='users' element={<PrivateAdmin><Users></Users></PrivateAdmin>}></Route>
           <Route path='addaproduct' element={<PrivateAdmin><AddAProduct /></PrivateAdmin>}></Route>
+          <Route path='manageproduct' element={<PrivateAdmin><ManageProducts /></PrivateAdmin>}></Route>
         </Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/contactus' element={<ContactUs />}></Route>
@@ -57,6 +60,7 @@ function App() {
         <Route path='/signup' element={<SignUp />}></Route>
         <Route path='*' element={<PagenotFound />}></Route>
       </Routes>
+      <Footer />
       <ToastContainer />
     </div>
   );

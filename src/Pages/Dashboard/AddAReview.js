@@ -23,9 +23,9 @@ const AddAReview = () => {
         })
     };
     return (
-        <div>
+        <div >
             <h2 className="text-4xl font-bold text-primary">Add a Review</h2>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)}  >
                 <div className="form-control w-full max-w-xs">
                     <label className="label">
                         <span className="label-text">Rating</span>

@@ -25,7 +25,7 @@ const Navbar = () => {
         </li>
     </>
     return (
-        <div className="navbar bg-base-100 max-w-7xl mx-auto px-12">
+        <div className="navbar sticky top-0 z-50 bg-base-100 max-w-7xl mx-auto px-12">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -35,7 +35,7 @@ const Navbar = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl text-primary font-bold">Car Parts Manufacturer</a>
+                <a className="btn btn-ghost normal-case text-2xl text-primary font-bold">Car <span className='text-secondary mx-1'>Parts</span> Manufacturer</a>
             </div>
             <div className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">

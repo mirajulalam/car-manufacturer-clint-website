@@ -6,6 +6,7 @@ import auth from './../../firebase.init';
 
 const MyOrders = () => {
     const [orders, setOrders] = useState([]);
+    console.log(orders)
     const [user] = useAuthState(auth);
 
     const navigate = useNavigate()
@@ -43,7 +44,6 @@ const MyOrders = () => {
         <div>
             <div class="overflow-x-auto">
                 <table class="table w-full">
-                    {/* <!-- head --> */}
                     <thead>
                         <tr>
                             <th></th>
@@ -63,15 +63,13 @@ const MyOrders = () => {
                                     {(o.price && !o.paid) && <Link to={`/dashboard/payment/${o._id}`}><button className='btn btn-xs btn-success'>Pay</button></Link>}
                                     {(o.price && o.paid) && <div>
                                         <p><span className='text-success'>Paid</span></p>
-                                        <p>Transaction Id: <span className='text-success'>{o.TransactionId}</span></p>
-
+                                        <p>Transaction Id: <span className='text-success'>{o.transactionId}</span></p>
                                     </div>}
                                 </td>
-
-
                                 <td><button onClick={() => handleDelete(o._id)} class="btn btn-error btn-outline">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
                                 </button></td>
+
                             </tr>)
                         }
                     </tbody>

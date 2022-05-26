@@ -47,7 +47,6 @@ const MyOrders = () => {
                         <tr>
                             <th></th>
                             <th>Name</th>
-                            <th>Email</th>
                             <th>product Name</th>
                             <th>Price</th>
                             <th>delete</th>
@@ -58,7 +57,6 @@ const MyOrders = () => {
                             orders.map((o, index) => <tr key={o._id}>
                                 <th>{index + 1}</th>
                                 <td>{o.userName}</td>
-                                <td>{o.email}</td>
                                 <td>{o.name}</td>
                                 <td>
                                     {(o.price && !o.paid) && <Link to={`/dashboard/payment/${o._id}`}><button className='btn btn-sm btn-success'>Pay</button></Link>}

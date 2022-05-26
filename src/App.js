@@ -25,6 +25,7 @@ import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 import AddAProduct from './Pages/Dashboard/AddAProduct';
 import Footer from './Pages/Shared/Footer';
 import ManageProducts from './Pages/Dashboard/ManageProducts';
+import ManageOrders from './Pages/Dashboard/ManageOrders';
 function App() {
   useEffect(() => {
     AOS.init();
@@ -52,6 +53,7 @@ function App() {
           <Route path='users' element={<PrivateAdmin><Users></Users></PrivateAdmin>}></Route>
           <Route path='addaproduct' element={<PrivateAdmin><AddAProduct /></PrivateAdmin>}></Route>
           <Route path='manageproduct' element={<PrivateAdmin><ManageProducts /></PrivateAdmin>}></Route>
+          <Route path='manageorder' element={<PrivateAdmin><ManageOrders /></PrivateAdmin>}></Route>
         </Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/contactus' element={<ContactUs />}></Route>

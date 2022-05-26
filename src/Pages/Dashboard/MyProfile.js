@@ -22,7 +22,7 @@ const MyProfile = () => {
             link,
         }
 
-        fetch(`http://localhost:5000/userdetail/${user?.email}`, {
+        fetch(`https://tranquil-anchorage-32269.herokuapp.com/userdetail/${user?.email}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'

@@ -8,7 +8,6 @@ const Part = ({ part }) => {
         navigate(`/product/${id}`)
     }
     return (
-
         <div data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000" class="card w-96 bg-base-100 shadow-xl hover:shadow-2xl">
             <figure class="px-10 pt-10">
                 <img src={picture} alt="Shoes" class=" w-full" />

@@ -17,7 +17,6 @@ const BusinessSummary = () => {
                     <div class="stat-title">Customer</div>
                     <div class="stat-value">150K</div>
                 </div>
-
                 <div class="stat mr-32">
                     <div class="stat-figure text-primary ">
                         <div class="avatar">
@@ -28,7 +27,6 @@ const BusinessSummary = () => {
                     <div class="stat-value">35k</div>
 
                 </div>
-
                 <div class="stat mr-32">
                     <div class="stat-figure text-primary">
                         <div class="avatar ">
@@ -39,7 +37,6 @@ const BusinessSummary = () => {
                     <div class="stat-value">60k</div>
 
                 </div>
-
             </div>
         </div>
     );

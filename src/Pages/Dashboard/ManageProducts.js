@@ -8,7 +8,7 @@ const ManageProducts = () => {
         fetch('http://localhost:5000/product')
             .then(res => res.json())
             .then(data => setManageProduct(data))
-    }, []);
+    }, [manageProduct]);
 
     return (
         <div className='my-28 max-w-7xl mx-auto px-12'>

@@ -6,7 +6,6 @@ import auth from './../../firebase.init';
 
 const MyOrders = () => {
     const [orders, setOrders] = useState([]);
-    console.log(orders)
     const [user] = useAuthState(auth);
 
     const navigate = useNavigate()
@@ -27,7 +26,7 @@ const MyOrders = () => {
     }, [user, navigate, orders]);
 
     const handleDelete = id => {
-        const checkout = window.confirm('Are you sure you want to delete products');
+        const checkout = window.confirm('Are you sure you want to order product delete');
         if (checkout) {
             const url = `https://tranquil-anchorage-32269.herokuapp.com/order/${id}`;
             console.log(url);
@@ -48,6 +47,7 @@ const MyOrders = () => {
                         <tr>
                             <th></th>
                             <th>Name</th>
+                            <th>Email</th>
                             <th>product Name</th>
                             <th>Price</th>
                             <th>delete</th>
@@ -58,9 +58,10 @@ const MyOrders = () => {
                             orders.map((o, index) => <tr key={o._id}>
                                 <th>{index + 1}</th>
                                 <td>{o.userName}</td>
+                                <td>{o.email}</td>
                                 <td>{o.name}</td>
                                 <td>
-                                    {(o.price && !o.paid) && <Link to={`/dashboard/payment/${o._id}`}><button className='btn btn-xs btn-success'>Pay</button></Link>}
+                                    {(o.price && !o.paid) && <Link to={`/dashboard/payment/${o._id}`}><button className='btn btn-sm btn-success'>Pay</button></Link>}
                                     {(o.price && o.paid) && <div>
                                         <p><span className='text-success'>Paid</span></p>
                                         <p>Transaction Id: <span className='text-success'>{o.transactionId}</span></p>

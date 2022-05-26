@@ -18,7 +18,6 @@ const CheckoutForm = ({ order }) => {
             method: "POST",
             headers: {
                 'content-type': 'application/json',
-                // 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
             },
             body: JSON.stringify({ price })
         })
@@ -88,9 +87,8 @@ const CheckoutForm = ({ order }) => {
                 method: "PATCH",
                 headers: {
                     'content-type': 'application/json',
-                    // 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
                 },
-                body: JSON.stringify({ payment })
+                body: JSON.stringify(payment)
             })
                 .then(res => res.json())
                 .then(data => {

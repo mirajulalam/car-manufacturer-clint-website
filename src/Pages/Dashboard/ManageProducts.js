@@ -6,7 +6,7 @@ const ManageProducts = () => {
     console.log(manageProduct);
 
     useEffect(() => {
-        fetch('https://tranquil-anchorage-32269.herokuapp.com/product')
+        fetch('http://localhost:5000/product')
             .then(res => res.json())
             .then(data => setManageProduct(data))
     }, [])

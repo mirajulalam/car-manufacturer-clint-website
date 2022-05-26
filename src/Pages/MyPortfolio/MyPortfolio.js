@@ -24,7 +24,7 @@ const MyPortfolio = () => {
                         <h1 class="text-5xl font-bold mb-4">Name: Mirajul Alam Alif</h1>
                         <p className='mb-4 text-2xl'>Email: alifmirajulalam@gmail.com</p>
                         <p className='mb-4 text-2xl'>Education: inter 1st year</p>
-                        <p className='mb-4 text-xl'>Web development Skill: html,css,javascript,bootstrape,tailwind,Firebase Authentication,react,nodejs,mongodb</p>
+                        <p className='mb-4 text-xl'>Web development Skill: html,css,Sass,javascript,Es6,bootstrape,tailwind,Firebase Authentication,react,nodejs,mongodb</p>
                         <p className='mb-4 text-xl'>My website live link</p>
                         <p className='mb-4'>live link : https://fruits-warehouse-1e44f.web.app/</p>
                         <p className='mb-4'>live link : https://food-store-bd-shop.netlify.app/</p>

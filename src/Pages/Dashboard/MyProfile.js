@@ -19,10 +19,10 @@ const MyProfile = () => {
             email,
             education,
             location,
-            link
+            link,
         }
 
-        fetch('http://localhost:5000/userdetail', {
+        fetch(`http://localhost:5000/userdetail/${user?.email}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'

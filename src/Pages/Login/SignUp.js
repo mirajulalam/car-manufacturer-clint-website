@@ -29,8 +29,7 @@ const SignUp = () => {
         return <Loading></Loading>
     }
     if (token) {
-        console.log(user, gUser);
-        navigate('/dashboard')
+        navigate('/home')
     }
     const onSubmit = async data => {
         await createUserWithEmailAndPassword(data.email, data.password);

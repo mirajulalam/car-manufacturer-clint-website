@@ -19,10 +19,12 @@ const Dashboard = () => {
                     <li><Link to='/dashboard'>My Profile</Link></li>
 
 
-                    {admin !== <div>
-                        <li><Link to='/dashboard/review'>My Reviews</Link></li>
-                        <li><Link to='/dashboard/order'>My Orders</Link></li>
-                    </div>}
+                    {!admin &&
+                            <div>
+                            <li><Link to='/dashboard/review'>My Reviews</Link></li>
+                            <li><Link to='/dashboard/order'>My Orders</Link></li>
+                            </div>
+                    }
 
 
                     {admin &&

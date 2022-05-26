@@ -3,7 +3,6 @@ import ManageProduct from './ManageProduct';
 
 const ManageProducts = () => {
     const [manageProduct, setManageProduct] = useState([]);
-    console.log(manageProduct);
 
     useEffect(() => {
         fetch('http://localhost:5000/product')

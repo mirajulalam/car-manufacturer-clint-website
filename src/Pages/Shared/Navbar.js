@@ -11,19 +11,19 @@ const Navbar = () => {
         localStorage.removeItem('accessToken')
     }
     const menuItems = <>
-        <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/blogs" >Blogs</NavLink></li>
-        <li><NavLink to="/contactus ">Contact</NavLink></li>
-        <li><NavLink to="/myportfolio ">MyPortfolio</NavLink></li>
+        <li className='font-bold'><NavLink to="/">Home</NavLink></li>
+        <li className='font-bold'><NavLink to="/blogs" >Blogs</NavLink></li>
+        <li className='font-bold'><NavLink to="/contactus ">Contact</NavLink></li>
+        <li className='font-bold'><NavLink to="/myportfolio ">MyPortfolio</NavLink></li>
         {
-            user && <li  ><NavLink to="/dashboard">Dashboard</NavLink></li>
+            user && <li className='font-bold'><NavLink to="/dashboard">Dashboard</NavLink></li>
         }
         <li>
-            {user ? <button onClick={logOut} className="btn btn-ghost font-normal normal-case"  >Sign Out</button> : <NavLink to="/login">Login</NavLink>}
+            {user ? <button onClick={logOut} className="btn btn-ghost  normal-case font-bold"  >Sign Out</button> : <NavLink to="/login" className="font-bold">Login</NavLink>}
         </li>
     </>
     return (
-        <div className="navbar sticky top-0 z-50 bg-base-100  mx-auto px-16 shadow-sm">
+        <div className="navbar sticky top-0 z-50 bg-base-100  mx-auto px-14 shadow-sm">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex="0" className="btn btn-ghost lg:hidden">

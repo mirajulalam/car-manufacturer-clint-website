@@ -78,34 +78,34 @@ const PurchasePage = () => {
     console.log(product)
 
     return (
-        <div class="hero min-h-screen bg-base-100">
-            <div class="hero-content flex-col lg:flex-row-reverse">
-                <div class="text-center lg:text-left">
+        <div className="hero min-h-screen bg-base-100">
+            <div className="hero-content flex-col lg:flex-row-reverse">
+                <div className="text-center lg:text-left">
                     <img src={product.picture} alt="" className='w-52' />
-                    <p class="py-6">Name: {product.name}</p>
-                    <p class="py-6">{product.description}</p>
-                    <p class="py-6">minimumOrderQuantity: {product.minimumOrderQuantity}</p>
-                    <p class="py-6">availableQuantity: {product.availableQuantity}</p>
-                    <p class="py-6">price: {product.price}</p>
+                    <p className="py-6">Name: {product.name}</p>
+                    <p className="py-6">{product.description}</p>
+                    <p className="py-6">minimumOrderQuantity: {product.minimumOrderQuantity}</p>
+                    <p className="py-6">availableQuantity: {product.availableQuantity}</p>
+                    <p className="py-6">price: {product.price}</p>
                 </div>
-                <div class="card flex-shrink-0 w-full max-w-sm shadow-xl bg-base-100">
-                    <form onSubmit={handleSubmit} class="card-body">
-                        <div class="form-control">
-                            <label class="label">
-                                <span class="label-text">name</span>
+                <div className="card flex-shrink-0 w-full max-w-sm shadow-xl bg-base-100">
+                    <form onSubmit={handleSubmit} className="card-body">
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">name</span>
                             </label>
-                            <input type="text" readOnly value={user?.displayName} placeholder="name" class="input input-bordered" />
+                            <input type="text" readOnly value={user?.displayName} placeholder="name" className="input input-bordered" />
                         </div>
-                        <div class="form-control">
-                            <label class="label">
-                                <span class="label-text">Email</span>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Email</span>
                             </label>
-                            <input type="text" placeholder="email" value={user?.email} class="input input-bordered" readOnly />
+                            <input type="text" placeholder="email" value={user?.email} className="input input-bordered" readOnly />
                         </div>
-                        <label class="label">
-                            <span class="label-text">Quantity</span>
+                        <label className="label">
+                            <span className="label-text">Quantity</span>
                         </label>
-                        <select name='quantiy' class="select select-bordered w-full max-w-xs">
+                        <select name='quantiy' className="select select-bordered w-full max-w-xs">
                             <option>300</option>
                             <option>500</option>
                             <option>1000</option>
@@ -116,10 +116,10 @@ const PurchasePage = () => {
                             <option>21000</option>
                         </select>
 
-                        <input type="text" required name='address' placeholder="address" class="input input-bordered" />
-                        <input type="number" required name='phone' placeholder="phone number" class="input input-bordered" />
-                        <div class="form-control mt-6">
-                            <button type='submit' class="btn btn-primary">purchases</button>
+                        <input type="text" required name='address' placeholder="address" className="input input-bordered" />
+                        <input type="number" required name='phone' placeholder="phone number" className="input input-bordered" />
+                        <div className="form-control mt-6">
+                            <button type='submit' className="btn btn-primary">purchases</button>
                         </div>
                     </form>
                 </div>

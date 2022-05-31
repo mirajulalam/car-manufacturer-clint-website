@@ -9,7 +9,7 @@ const ManageOrders = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`https://tranquil-anchorage-32269.herokuapp.com/order/${user?.email}`, {
+            fetch(`http://localhost:5000/allOrder`, {
                 method: "GET",
             })
                 .then(res => res.json())
@@ -20,8 +20,8 @@ const ManageOrders = () => {
     }, [user]);
     return (
         <div>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     <thead>
                         <tr>
                             <th></th>
@@ -45,7 +45,7 @@ const ManageOrders = () => {
                                         <p><span className='text-success'>Pending</span></p>
                                     </div>}
                                 </td>
-                                <td><button class="btn btn-error btn-outline">
+                                <td><button className="btn btn-error btn-outline">
                                     Shipped
                                 </button>
                                 </td>

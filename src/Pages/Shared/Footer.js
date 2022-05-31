@@ -4,26 +4,26 @@ const Footer = () => {
     const currentDate = new Date().getFullYear();
     return (
         <div className='bg-primary'>
-            <footer class="footer px-28 py-12  text-white">
+            <footer className="footer px-28 py-12  text-white">
                 <div>
-                    <span class="footer-title fw-bold fs-5">COMPANY</span>
-                    <a class="link link-hover">About us</a>
-                    <a class="link link-hover">Quality & services</a>
-                    <a class="link link-hover">Brands</a>
-                    <a class="link link-hover">Contact</a>
+                    <span className="footer-title fw-bold fs-5">COMPANY</span>
+                    <a className="link link-hover">About us</a>
+                    <a className="link link-hover">Quality & services</a>
+                    <a className="link link-hover">Brands</a>
+                    <a className="link link-hover">Contact</a>
                 </div>
                 <div>
-                    <span class="footer-title">Product</span>
-                    <a class="link link-hover">Bearing</a>
-                    <a class="link link-hover">Disc Clutch</a>
-                    <a class="link link-hover">Iridium spark plugs</a>
-                    <a class="link link-hover">Ac gear motor</a>
+                    <span className="footer-title">Product</span>
+                    <a className="link link-hover">Bearing</a>
+                    <a className="link link-hover">Disc Clutch</a>
+                    <a className="link link-hover">Iridium spark plugs</a>
+                    <a className="link link-hover">Ac gear motor</a>
                 </div>
                 <div>
-                    <span class="footer-title">Legal</span>
-                    <a class="link link-hover">Terms of use</a>
-                    <a class="link link-hover">Privacy policy</a>
-                    <a class="link link-hover">Cookie policy</a>
+                    <span className="footer-title">Legal</span>
+                    <a className="link link-hover">Terms of use</a>
+                    <a className="link link-hover">Privacy policy</a>
+                    <a className="link link-hover">Cookie policy</a>
                 </div>
             </footer>
             <div className='text-center py-5'>

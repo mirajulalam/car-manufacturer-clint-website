@@ -9,7 +9,7 @@ const ManageOrders = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/allOrder`, {
+            fetch(`https://tranquil-anchorage-32269.herokuapp.com/allOrder`, {
                 method: "GET",
             })
                 .then(res => res.json())

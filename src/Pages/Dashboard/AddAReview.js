@@ -45,7 +45,7 @@ const AddAReview = () => {
                     }
                     console.log(review);
                     // send to your database
-                    const url = 'http://localhost:5000/review';
+                    const url = 'https://tranquil-anchorage-32269.herokuapp.com/review';
                     fetch(url, {
                         method: "POST",
                         headers: {

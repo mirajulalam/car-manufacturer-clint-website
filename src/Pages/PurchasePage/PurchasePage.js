@@ -8,17 +8,17 @@ import { toast } from 'react-toastify';
 const PurchasePage = () => {
     const [user, loading] = useAuthState(auth);
     const { productId } = useParams();
-    const [product, setProdut] = useState({});
+    const [product, setProduct] = useState({});
 
     useEffect(() => {
         const url = `https://tranquil-anchorage-32269.herokuapp.com/product/${productId}`;
         fetch(url)
             .then(res => res.json())
-            .then(data => setProdut(data))
+            .then(data => setProduct(data))
     }, [productId])
 
     const handleSubmit = event => {
-        event.preventDefault()
+        event.preventDefault();
         const quantity = event.target.quantiy.value;
         const userName = user?.displayName;
         const email = user?.email;
@@ -30,6 +30,7 @@ const PurchasePage = () => {
         const price = product.price;
         const address = event.target.address.value;
         const phone = event.target.phone.value;
+
 
         const uploadProduct = {
             quantity,
@@ -61,32 +62,26 @@ const PurchasePage = () => {
                 else {
                     toast('Product purchase failed')
                 }
-                const newquantity = product.availableQuantity - quantity;
-                console.log(newquantity)
                 event.target.reset()
-                console.log(data);
-
             })
-
-        console.log(uploadProduct)
     }
 
     if (loading) {
         return <Loading />
     }
 
-    console.log(product)
-
     return (
         <div className="hero min-h-screen bg-base-100">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left">
+                    <div className='grid justify-items-center my-2'>
                     <img src={product.picture} alt="" className='w-52' />
-                    <p className="py-6">Name: {product.name}</p>
-                    <p className="py-6">{product.description}</p>
-                    <p className="py-6">minimumOrderQuantity: {product.minimumOrderQuantity}</p>
-                    <p className="py-6">availableQuantity: {product.availableQuantity}</p>
-                    <p className="py-6">price: {product.price}</p>
+                    </div>
+                    <p className='py-1 font-medium'>Name: {product.name}</p>
+                    <p className='py-1'>{product.description}</p>
+                    <p className='py-1 font-medium'>minimumOrderQuantity: {product.minimumOrderQuantity}</p>
+                    <p className='py-1 font-medium'>availableQuantity: {product.availableQuantity}</p>
+                    <p className='py-1 font-medium'>price: ${product.price}</p>
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-xl bg-base-100">
                     <form onSubmit={handleSubmit} className="card-body">
@@ -115,7 +110,6 @@ const PurchasePage = () => {
                             <option>20000</option>
                             <option>21000</option>
                         </select>
-
                         <input type="text" required name='address' placeholder="address" className="input input-bordered" />
                         <input type="number" required name='phone' placeholder="phone number" className="input input-bordered" />
                         <div className="form-control mt-6">

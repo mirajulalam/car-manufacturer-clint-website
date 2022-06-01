@@ -2,22 +2,6 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 
-// const review = {
-//     rating: data.rating,
-//     name: data.name,
-//     email: data.email,
-//     reviewText: data.reviewText,
-// }
-// fetch("https://tranquil-anchorage-32269.herokuapp.com/review", {
-//     method: "POST",
-//     headers: {
-//         "content-type": "application/json"
-//     },
-//     body: JSON.stringify(review)
-// }).then(res => res.json()).then(data => {
-//     toast.success("Give Your Review Successfully")
-//     reset()
-// })
 
 const AddAReview = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
@@ -68,9 +52,9 @@ const AddAReview = () => {
             })
     };
     return (
-        <div className='h-screen justify-center items-center w-full max-w-xs'>
-            <h2 className="text-4xl font-bold text-primary">Add a Review</h2>
-            <form onSubmit={handleSubmit(onSubmit)}  >
+        <div >
+            <h2 className="text-4xl font-bold text-primary text-center">Add a Review</h2>
+            <form onSubmit={handleSubmit(onSubmit)}  className='grid justify-items-center'>
                 <div className="form-control w-full max-w-xs">
                     <label className="label">
                         <span className="label-text">Rating</span>
@@ -141,12 +125,13 @@ const AddAReview = () => {
                     </label>
                 </div>
                 <div className="form-control w-full max-w-xs">
-                    <label className="label">
-                        <span className="label-text">Image</span>
+                    <label htmlFor='Images' className="btn btn-outline btn-info ">
+                        <span className="label-text">Image url</span>
                     </label>
                     <input
+                    id='Images'
                         type="file"
-                        placeholder="Image url" className="input input-bordered w-full max-w-xs"
+                        placeholder="Image url" className="input input-bordered w-full max-w-xs hidden"
                         {...register("Images", {
                             required: {
                                 value: true,
@@ -158,8 +143,6 @@ const AddAReview = () => {
                         {errors.Images?.type === 'required' && <span className="label-text-alt text-red-500">{errors.Images.message}</span>}
                     </label>
                 </div>
-
-                <br />
                 <input className='btn btn-primary w-full max-w-xs text-white' type="submit" value="Add" />
             </form>
         </div>

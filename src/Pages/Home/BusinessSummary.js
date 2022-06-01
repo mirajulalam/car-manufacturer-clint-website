@@ -5,7 +5,7 @@ import { BsFlagFill } from 'react-icons/bs';
 const BusinessSummary = () => {
     return (
         <div className='my-28 max-w-7xl mx-auto px-12 text-center'>
-            <h2 className='text-primary text-center text-4xl font-bold uppercase my-10'>Millions Uses trust us</h2>
+            <h2 className='text-primary text-center text-4xl font-bold uppercase my-10'>Millions User trust us</h2>
             <h2 className=' text-center text-2xl font-bold uppercase my-10'>Our user expectation</h2>
             <div className="stats stats-vertical lg:stats-horizontal shadow mr-10">
                 <div className="stat mr-32">

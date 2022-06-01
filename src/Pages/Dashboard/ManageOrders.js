@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
+import Loading from '../Shared/Loading'
 
 const ManageOrders = () => {
     const [manageOrder, setManageOrder] = useState([]);
-    const [user] = useAuthState(auth);
+    const [user,isLoading] = useAuthState(auth);
 
     useEffect(() => {
         if (user) {
@@ -18,6 +20,23 @@ const ManageOrders = () => {
                 })
         }
     }, [user]);
+
+    const handleProductDelete = id => {
+        const checkout = window.confirm('Are you sure you want to delete order');
+        if (checkout) {
+            const url = `https://tranquil-anchorage-32269.herokuapp.com/order/${id}`;
+            fetch(url, {
+                method: "DELETE",
+            })
+                .then(res => res.json())
+                .then(data => {
+                    toast('order delete successfull')
+                })
+        }
+    }
+    if(isLoading){
+        return <Loading></Loading>
+    }
     return (
         <div>
             <div className="overflow-x-auto">
@@ -29,7 +48,7 @@ const ManageOrders = () => {
                             <th>Email</th>
                             <th>product Name</th>
                             <th>Price</th>
-                            <th>Shipped</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -42,11 +61,11 @@ const ManageOrders = () => {
                                 <td>
                                     {(o.price && !o.paid) && <Link to={`/dashboard/payment/${o._id}`}><button className='btn btn-sm btn-success'>Unpaid</button></Link>}
                                     {(o.price && o.paid) && <div>
-                                        <p><span className='text-success'>Pending</span></p>
+                                        <p><span className='text-success'>paid</span></p>
                                     </div>}
                                 </td>
-                                <td><button className="btn btn-error btn-outline">
-                                    Shipped
+                                <td><button onClick={() => handleProductDelete(o._id)} disabled={o.paid} className="btn btn-error btn-outline">
+                                    Delete
                                 </button>
                                 </td>
 

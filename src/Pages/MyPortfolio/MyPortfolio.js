@@ -15,7 +15,7 @@ const MyPortfolio = () => {
                         <p className='mb-4'>live link : https://fruits-warehouse-1e44f.web.app/</p>
                         <p className='mb-4'>live link : https://food-store-bd-shop.netlify.app/</p>
                         <p className='mb-4'>live link: https://relaxed-wisp-2ae68b.netlify.app/</p>
-                        <p>my name is mirajul alam alif. I am a junior web developer.I love programming I went to a full stact developer.and I am learning web development in 1 year.and I am learning in web development  with programming-hero jhankar mahamub sir.</p>
+                        <p>my name is mirajul alam alif. I am a junior web developer.I love programming I went to a full stack developer.and I am learning web development in 1 year.and I am learning in web development  with programming-hero jhankar mahamub sir.</p>
                     </div>
                 </div>
             </div>

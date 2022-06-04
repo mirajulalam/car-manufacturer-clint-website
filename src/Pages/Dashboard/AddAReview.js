@@ -23,7 +23,7 @@ const AddAReview = () => {
                     const review = {
                         rating: data.rating,
                         name: data.name,
-                        email: data.email,
+                        location: data.location,
                         reviewText: data.reviewText,
                         img: img
                     }
@@ -89,25 +89,20 @@ const AddAReview = () => {
                 </div>
                 <div className="form-control w-full max-w-xs">
                     <label className="label">
-                        <span className="label-text">Email</span>
+                        <span className="label-text">Location</span>
                     </label>
                     <input
-                        type="email"
-                        placeholder="Your email" className="input input-bordered w-full max-w-xs"
-                        {...register("email", {
+                        type="text"
+                        placeholder="Your location" className="input input-bordered w-full max-w-xs"
+                        {...register("location", {
                             required: {
                                 value: true,
-                                message: 'Email is Required'
-                            },
-                            pattern: {
-                                value: /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/,
-                                message: 'Provide a valid Email'
+                                message: 'Location is Required'
                             }
                         })}
                     />
                     <label className="label">
-                        {errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
-                        {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
+                        {errors.location?.type === 'required' && <span className="label-text-alt text-red-500">{errors.location.message}</span>}
                     </label>
                 </div>
                 <div className="form-control w-full max-w-xs">

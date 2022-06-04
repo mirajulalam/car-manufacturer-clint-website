@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Review = ({ review }) => {
-    const { name, reviewText, email, rating,img } = review;
+    const { name, reviewText, email,location, rating,img } = review;
     return (
         <div data-aos="flip-left"
             data-aos-easing="ease-out-cubic"
@@ -11,13 +11,13 @@ const Review = ({ review }) => {
                 <p>{reviewText}</p>
                 <div className="flex items-center mt-5">
                 <div className="avatar">
-                        <div className="w-16 rounded-full ring ring-primary ring-offset-base-100 mr-5">
+                        <div className="w-16 rounded-full ring ring-secondary ring-offset-base-100 mr-5">
                             <img src={img} alt="" />
                         </div>
                     </div>
                     <div>
-                        <h4 className='text-xl'>Name: {name}</h4>
-                        <p>Email: {email}</p>
+                        <h4 className='text-xl'>{name}</h4>
+                        <p>{location}</p>
                     </div>
                 </div>
             </div>

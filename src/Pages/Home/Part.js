@@ -14,7 +14,7 @@ const Part = ({ part }) => {
             </figure>
             <div className="card-body ">
                 <h2 className="card-title">Name: {name}</h2>
-                <p>{description}</p>
+                <p>{description.slice(0,100)+"...read more"}</p>
                 <p>Price: ${price}</p>
                 <p>MinimumOrderQuantity: {minimumOrderQuantity}</p>
                 <p>AvailableQuantity: {availableQuantity}</p>

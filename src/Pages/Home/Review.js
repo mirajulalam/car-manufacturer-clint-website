@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Review = ({ review }) => {
-    const { name, reviewText, email,location, rating,img } = review;
+    const { name, reviewText,location, rating,img } = review;
     return (
         <div data-aos="flip-left"
             data-aos-easing="ease-out-cubic"

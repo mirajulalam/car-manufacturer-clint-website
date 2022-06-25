@@ -48,6 +48,7 @@ const MyOrders = () => {
                             <th></th>
                             <th>Name</th>
                             <th>product Name</th>
+                            <th>Status</th>
                             <th>Price</th>
                             <th>delete</th>
                         </tr>
@@ -58,10 +59,11 @@ const MyOrders = () => {
                                 <th>{index + 1}</th>
                                 <td>{o.userName}</td>
                                 <td>{o.name}</td>
+                                <td className='text-info font-bold'>Pending</td>
                                 <td>
                                     {(o.price && !o.paid) && <Link to={`/dashboard/payment/${o._id}`}><button className='btn btn-sm btn-success'>Payment</button></Link>}
                                     {(o.price && o.paid) && <div>
-                                        <p><span className='text-success'>Paid</span></p>
+                                        <p><span className='text-success'>PAID</span></p>
                                         <p>Transaction Id: <span className='text-success'>{o.transactionId}</span></p>
                                     </div>}
                                 </td>
@@ -71,7 +73,6 @@ const MyOrders = () => {
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
                                 </button>
                                 </td>
-
                             </tr>)
                         }
                     </tbody>

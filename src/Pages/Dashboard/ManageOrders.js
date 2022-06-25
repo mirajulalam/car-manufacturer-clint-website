@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading'
@@ -43,11 +42,10 @@ const ManageOrders = () => {
                 <table className="table w-full">
                     <thead>
                         <tr>
-                            <th></th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>product Name</th>
-                            <th>Price</th>
+                            <th>SR</th>
+                            <th>Customer</th>
+                            <th>product</th>
+                            <th>Stutas</th>
                             <th>Delete</th>
                         </tr>
                     </thead>
@@ -55,20 +53,13 @@ const ManageOrders = () => {
                         {
                             manageOrder.map((o, index) => <tr key={o._id}>
                                 <th>{index + 1}</th>
-                                <td>{o.userName}</td>
                                 <td>{o.email}</td>
                                 <td>{o.name}</td>
-                                <td>
-                                    {(o.price && !o.paid) && <Link to={`/dashboard/payment/${o._id}`}><button className='btn btn-sm btn-success'>Unpaid</button></Link>}
-                                    {(o.price && o.paid) && <div>
-                                        <p><span className='text-success'>paid</span></p>
-                                    </div>}
-                                </td>
+                                <td><button className="btn btn-success btn-outline mr-2">Pending...</button><button className="btn btn-info btn-outline">Shipped</button></td>
                                 <td><button onClick={() => handleProductDelete(o._id)} disabled={o.paid} className="btn btn-error btn-outline">
                                     Delete
                                 </button>
                                 </td>
-
                             </tr>)
                         }
                     </tbody>

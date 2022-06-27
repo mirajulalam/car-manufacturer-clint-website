@@ -1,21 +1,30 @@
-import React from 'react';
-import { toast } from 'react-toastify';
+import React,{ useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 const ContactUs = () => {
-    const handleSubmit = event => {
-        event.preventDefault();
-        toast('Thanks for your information')
-        event.target.reset();
-    }
+    
+    const form = useRef();
+
+    const sendEmail = (e) => {
+      e.preventDefault();
+  
+      emailjs.sendForm('service_d3mn69j', 'template_bovssme', form.current, 'bC3daaJCpTsOQkKTT')
+        .then((result) => {
+            console.log(result.text);
+            e.target.reset();
+        }, (error) => {
+            console.log(error.text);
+        });
+    };
     return (
         <section data-aos="fade-down"
             data-aos-easing="linear"
             data-aos-duration="1500" className='mb-10'>
             <div className='text-center'>
-                <h3 className='text-primary  text-4xl font-bold 		 uppercase mb-10'>Contact Us</h3>
+                <h3 className='text-primary  text-4xl font-bold uppercase mb-10'>Contact Us</h3>
             </div>
             <div className='text-center'>
-                <form onSubmit={handleSubmit} >
+                <form ref={form} onSubmit={sendEmail}>
                     <input className='p-3 mb-4 rounded w-5/12 border-2' type="text" name="name" id="" placeholder='Your name' required />
                     <br />
                     <input className='p-3 mb-4 rounded w-5/12 border-2' type="email" name="email" id="" placeholder='Email Address' required />

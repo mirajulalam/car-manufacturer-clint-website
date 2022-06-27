@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import bannerImages from '../../assets/bannerImages.jpg'
+import bannerImages from '../../assets/bannerImages.jpg';
+
 const Banner = () => {
     return (
         <div className="container">
@@ -13,7 +14,6 @@ const Banner = () => {
                 </div>
             </div>
         </div>
-
     );
 };
 

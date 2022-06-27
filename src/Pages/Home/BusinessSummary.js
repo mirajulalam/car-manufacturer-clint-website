@@ -2,6 +2,7 @@ import React from 'react';
 import { AiFillLike } from 'react-icons/ai';
 import { FiUsers } from 'react-icons/fi';
 import { BsFlagFill } from 'react-icons/bs';
+
 const BusinessSummary = () => {
     return (
         <div className='my-28 max-w-7xl mx-auto px-12 text-center'>
@@ -15,7 +16,7 @@ const BusinessSummary = () => {
                         </div>
                     </div>
                     <div className="stat-title">Customer</div>
-                    <div className="stat-value">150K</div>
+                    <div className="stat-value">33k</div>
                 </div>
                 <div className="stat mr-32">
                     <div className="stat-figure text-primary ">
@@ -25,7 +26,6 @@ const BusinessSummary = () => {
                     </div>
                     <div className="stat-title">Annual revenew</div>
                     <div className="stat-value">35k</div>
-
                 </div>
                 <div className="stat mr-32">
                     <div className="stat-figure text-primary">
@@ -35,7 +35,6 @@ const BusinessSummary = () => {
                     </div>
                     <div className="stat-title">Reviews</div>
                     <div className="stat-value">60k</div>
-
                 </div>
             </div>
         </div>

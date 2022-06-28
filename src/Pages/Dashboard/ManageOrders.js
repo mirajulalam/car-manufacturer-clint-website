@@ -56,7 +56,6 @@ const ManageOrders = () => {
                             <th>SR</th>
                             <th>Customer</th>
                             <th>product</th>
-                            <th>Stutas</th>
                             <th>Delete</th>
                         </tr>
                     </thead>
@@ -66,7 +65,6 @@ const ManageOrders = () => {
                                 <th>{index + 1}</th>
                                 <td>{o.email}</td>
                                 <td>{o.name}</td>
-                                <td><button className="btn btn-success btn-outline mr-2">Pending...</button><button className="btn btn-info btn-outline">Shipped</button></td>
                                 <td><button onClick={() => handleProductDelete(o._id)} disabled={o.paid} className="btn btn-error btn-outline">
                                     Delete
                                 </button>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { toast } from 'react-toastify';
+import swal from 'sweetalert';
 
 const UsersDetail = ({ user, refetch, index }) => {
     const { email, role } = user;
@@ -14,7 +14,7 @@ const UsersDetail = ({ user, refetch, index }) => {
             .then(res => res.json())
             .then(data => {
                 refetch()
-                toast.success('Admin made in successfully')
+                swal("Successfully", "Admin made in successfully", "success");
             })
     }
     return (

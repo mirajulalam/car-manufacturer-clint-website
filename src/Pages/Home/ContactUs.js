@@ -1,16 +1,16 @@
 import React,{ useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import swal from 'sweetalert';
 
-const ContactUs = () => {
-    
+const ContactUs = () => { 
     const form = useRef();
 
     const sendEmail = (e) => {
       e.preventDefault();
-  
       emailjs.sendForm('service_d3mn69j', 'template_bovssme', form.current, 'bC3daaJCpTsOQkKTT')
         .then((result) => {
             console.log(result.text);
+            swal("Successfully", "Thanks for the your email", "success");
             e.target.reset();
         }, (error) => {
             console.log(error.text);

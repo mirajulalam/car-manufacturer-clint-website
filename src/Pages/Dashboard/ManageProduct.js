@@ -1,22 +1,32 @@
 import React from 'react';
-import { toast } from 'react-toastify';
+import swal from 'sweetalert';
 
 const ManageProduct = ({ manage }) => {
     const { name, picture, description, price, minimumOrderQuantity, availableQuantity } = manage;
 
     const handleProductDelete = id => {
-        const checkout = window.confirm('Are you sure you want to delete product');
-        if (checkout) {
-            const url = `https://tranquil-anchorage-32269.herokuapp.com/product/${id}`;
-            console.log(url);
-            fetch(url, {
-                method: "DELETE",
-            })
-                .then(res => res.json())
-                .then(data => {
-                    toast('product delete successfull')
+        swal({
+            title: "Are you sure you want to delete product?",
+            text: "Once deleted, you will not be able to recover this product!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((checkout) => {
+            if (checkout) {
+                const url = `https://tranquil-anchorage-32269.herokuapp.com/product/${id}`;
+                fetch(url, {
+                    method: "DELETE",
                 })
-        }
+                    .then(res => res.json())
+                    .then(data => {
+                        swal("Successfully", "Product delete successfull", "success");
+                    })
+            }
+               else {
+               swal("Your product is safe!");
+                }
+          });
     }
     return (
         <div className="card w-96 bg-base-100 shadow-xl hover:shadow-2xl">

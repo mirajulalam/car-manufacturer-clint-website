@@ -1,7 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { toast } from 'react-toastify';
-
+import swal from 'sweetalert';
 
 const AddAReview = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
@@ -27,7 +26,6 @@ const AddAReview = () => {
                         reviewText: data.reviewText,
                         img: img
                     }
-                    console.log(review);
                     // send to your database
                     const url = 'https://tranquil-anchorage-32269.herokuapp.com/review';
                     fetch(url, {
@@ -41,11 +39,11 @@ const AddAReview = () => {
                         .then(inserted => {
                             console.log(inserted);
                             if (inserted.insertedId) {
-                                toast.success('Review Added Successfully')
+                                swal("Successfully", "Review added successfull", "success");
                                 reset()
                             }
                             else {
-                                toast.error('Failed To Review Added')
+                                swal("Error", "Review added failed!", "error");
                             }
                         })
                 }

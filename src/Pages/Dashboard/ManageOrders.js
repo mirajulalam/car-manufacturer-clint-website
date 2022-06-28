@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { toast } from 'react-toastify';
+import swal from 'sweetalert';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading'
 
@@ -18,21 +18,32 @@ const ManageOrders = () => {
                     setManageOrder(data)
                 })
         }
-    }, [user]);
-
+    }, [manageOrder]);
+   
     const handleProductDelete = id => {
-        const checkout = window.confirm('Are you sure you want to delete order');
-        if (checkout) {
-            const url = `https://tranquil-anchorage-32269.herokuapp.com/order/${id}`;
-            fetch(url, {
+        swal({
+            title: "Are you sure you want to delete order?",
+            text: "Once deleted, you will not be able to recover this order!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((checkout) => {
+            if (checkout) {
+                const url = `https://tranquil-anchorage-32269.herokuapp.com/order/${id}`;
+                fetch(url, {
                 method: "DELETE",
-            })
+                })
                 .then(res => res.json())
                 .then(data => {
-                    toast('order delete successfull')
+                swal("Successfully", "Order delete successfull", "success");
                 })
-        }
-    }
+            }
+               else {
+               swal("Your order product is safe!");
+                }
+          });
+    } 
     if(isLoading){
         return <Loading></Loading>
     }

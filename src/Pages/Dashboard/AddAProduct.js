@@ -1,5 +1,5 @@
 import React from 'react';
-import { toast } from 'react-toastify';
+import swal from 'sweetalert';
 
 const AddAProduct = () => {
 
@@ -31,7 +31,7 @@ const AddAProduct = () => {
         })
             .then(res => res.json())
             .then(data => {
-                toast.success("Product added Successfully")
+                swal("Successfully", "Product added successfull", "success");
                 event.target.reset();
             })
     }

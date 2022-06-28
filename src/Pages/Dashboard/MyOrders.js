@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import swal from 'sweetalert';
 import auth from './../../firebase.init';
 
 const MyOrders = () => {
     const [orders, setOrders] = useState([]);
     const [user] = useAuthState(auth);
-
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (user) {
@@ -26,18 +25,29 @@ const MyOrders = () => {
     }, [user, navigate, orders]);
 
     const handleDelete = id => {
-        const checkout = window.confirm('Are you sure you want to order product delete');
-        if (checkout) {
-            const url = `https://tranquil-anchorage-32269.herokuapp.com/order/${id}`;
-            console.log(url);
-            fetch(url, {
-                method: "DELETE",
-            })
-                .then(res => res.json())
-                .then(data => {
-                    toast('product delete successfull')
-                })
-        }
+       swal({
+            title: "Are you sure you want to order product delete?",
+            text: "Once deleted, you will not be able to recover this order product!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((checkout) => {
+                if (checkout) {
+                    const url = `https://tranquil-anchorage-32269.herokuapp.com/order/${id}`;
+                    console.log(url);
+                    fetch(url, {
+                        method: "DELETE",
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            swal("Successfully", "Product delete successfull", "success");
+                        })
+                }
+               else {
+               swal("Your order product is safe!");
+                }
+          });
     }
     return (
         <div>

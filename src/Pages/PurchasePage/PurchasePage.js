@@ -4,6 +4,8 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from './../../firebase.init';
 import Loading from './../Shared/Loading';
 import { toast } from 'react-toastify';
+import swal from 'sweetalert';
+
 
 const PurchasePage = () => {
     const [user, loading] = useAuthState(auth);
@@ -57,10 +59,10 @@ const PurchasePage = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                    toast('Product purchase successfully')
+                    swal("Successfully", "Thanks for the purchase", "success");
                 }
                 else {
-                    toast('Product purchase failed')
+                    swal("Error", "Product purchase failed!", "error");
                 }
                 event.target.reset()
             })

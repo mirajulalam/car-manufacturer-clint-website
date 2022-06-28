@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import swal from 'sweetalert';
 
 const MyProfile = () => {
     const [user] = useAuthState(auth);
@@ -13,7 +14,6 @@ const MyProfile = () => {
         const education = event.target.education.value;
         const location = event.target.location.value;
         const link = event.target.link.value;
-
         const userDetails = {
             name,
             email,
@@ -21,7 +21,6 @@ const MyProfile = () => {
             location,
             link,
         }
-
         fetch(`https://tranquil-anchorage-32269.herokuapp.com/userdetail/${user?.email}`, {
             method: "PUT",
             headers: {
@@ -32,6 +31,7 @@ const MyProfile = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                swal("Successfully", "Profile update successfull", "success");
             })
     }
     return (
@@ -56,7 +56,6 @@ const MyProfile = () => {
                     <input className='p-3 mb-4 rounded w-5/12 border-2' type="text" name="link" id="" placeholder='Link'
                         required />
                     <br />
-
                     <br />
                     <button className='btn btn-primary text-uppercase text-white font-bold bg-gradient-to-r from-primary to-primary'>Submit</button>
                 </form>

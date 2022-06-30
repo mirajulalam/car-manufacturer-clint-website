@@ -3,7 +3,7 @@ import auth from '../../firebase.init';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
-import { toast } from 'react-toastify';
+import swal from 'sweetalert';
 import Loading from '../Shared/Loading';
 import useToken from '../../hooks/useToken';
 const Login = () => {
@@ -47,10 +47,10 @@ const Login = () => {
         const email = getValues('email')
         if (email) {
             await sendPasswordResetEmail(email);
-            toast('Sent email');
+            swal("Sent email", "Please check your email", "success");
         }
         else {
-            toast('please enter your email address')
+            swal("Error", "Please enter your email address", "warning");
         }
     }
     return (
@@ -104,7 +104,7 @@ const Login = () => {
                                 })}
                             />
                             <label className="label">
-                                <span onClick={resetPassword} className="label-text-alt cursor-pointer">Forgot password? Reset password</span>
+                                <p onClick={resetPassword} className="label-text-alt cursor-pointer">Forgot password? <span className='text-primary'>Reset password</span></p>
                             </label>
                             <label className="label">
                                 {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}

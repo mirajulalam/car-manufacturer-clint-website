@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from './../../firebase.init';
 import Loading from './../Shared/Loading';
-import { toast } from 'react-toastify';
 import swal from 'sweetalert';
 
 
@@ -21,7 +20,7 @@ const PurchasePage = () => {
 
     const handleSubmit = event => {
         event.preventDefault();
-        const quantity = event.target.quantiy.value;
+        const quantity = event.target.quantity.value;
         const userName = user?.displayName;
         const email = user?.email;
         const name = product.name;
@@ -33,41 +32,37 @@ const PurchasePage = () => {
         const address = event.target.address.value;
         const phone = event.target.phone.value;
 
-
-        const uploadProduct = {
-            quantity,
-            userName,
-            email,
-            name,
-            picture,
-            description,
-            minimumOrderQuantity,
-            availableQuantity,
-            price,
-            address,
-            phone
-        }
-
-
-        fetch('https://tranquil-anchorage-32269.herokuapp.com/order', {
-            method: "POST",
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(uploadProduct)
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.insertedId) {
-                    swal("Successfully", "Thanks for the purchase", "success");
-                }
-                else {
-                    swal("Error", "Product purchase failed!", "error");
-                }
-                event.target.reset()
+        if (quantity < 500) {
+			return swal({
+                title: "Warning!",
+                text: "Minimum Order Quantity - 500",
+                icon: "warning",
+                button: "Close",
+              });
+		}
+        else{
+            const uploadProduct = {quantity,userName,email,name,picture,description,minimumOrderQuantity,availableQuantity,price,address,phone}
+    
+            fetch('https://tranquil-anchorage-32269.herokuapp.com/order', {
+                method: "POST",
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(uploadProduct)
             })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.insertedId) {
+                        swal("Successfully", "Thanks for the purchase", "success");
+                    }
+                    else {
+                        swal("Error", "Product purchase failed!", "error");
+                    }
+                    event.target.reset()
+                })
+        }
     }
-
+        
     if (loading) {
         return <Loading />
     }
@@ -102,7 +97,8 @@ const PurchasePage = () => {
                         <label className="label">
                             <span className="label-text">Quantity</span>
                         </label>
-                        <select name='quantiy' className="select select-bordered w-full max-w-xs">
+                        <select name='quantity' id='inputState' className="select select-bordered w-full max-w-xs">
+                            <option>100</option>
                             <option>300</option>
                             <option>500</option>
                             <option>1000</option>

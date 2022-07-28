@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import swal from "sweetalert";
-import contact from '../../assets/contact.gif'
+import contact from "../../assets/contact.gif";
 
 const ContactUs = () => {
   const form = useRef();
@@ -39,7 +39,6 @@ const ContactUs = () => {
         </h3>
       </div>
       <div className="flex justify-center items-center my-16 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
-
         <div className="text-center flex-1">
           <form ref={form} onSubmit={sendEmail}>
             <input
@@ -85,12 +84,17 @@ const ContactUs = () => {
           </form>
         </div>
         <div className="flex-1 justify-center">
-          <img data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000" className="w-full rounded-lg mx-30" src={contact} alt=""
+          <img
+            data-aos="zoom-in"
+            data-aos-delay="200"
+            data-aos-duration="1000"
+            className="w-full rounded-lg mx-30"
+            src={contact}
+            alt=""
           />
         </div>
       </div>
     </section>
-    
   );
 };
 

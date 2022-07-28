@@ -21,9 +21,14 @@ const Login = () => {
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(
         auth
     );
+    
     const navigate = useNavigate();
     const location = useLocation();
 
+    if (loading || gLoading || sending) {
+        return <Loading></Loading>
+    }
+    
     let from = location.state?.from?.pathname || "/";
 
     if (token) {
@@ -34,9 +39,7 @@ const Login = () => {
     if (error || gError) {
         errorMessage = <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
     }
-    if (loading || gLoading || sending) {
-        return <Loading></Loading>
-    }
+    
 
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password);

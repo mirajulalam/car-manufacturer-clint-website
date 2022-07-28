@@ -38,7 +38,7 @@ const ContactUs = () => {
             </button>
           </form>
         </div>
-        <div className="flex-1 justify-center">
+        <div className="flex-1 justify-center content-center">
           <img data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000" className="w-full rounded-lg mx-30" src={contact1} alt=""
           />
         </div>

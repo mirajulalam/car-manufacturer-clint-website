@@ -12,7 +12,7 @@ const PurchasePage = () => {
     const [product, setProduct] = useState({});
 
     useEffect(() => {
-        const url = `https://tranquil-anchorage-32269.herokuapp.com/product/${productId}`;
+        const url = `https://car-manufacturer-server-website.vercel.app/product/${productId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))
@@ -43,7 +43,7 @@ const PurchasePage = () => {
         else{
             const uploadProduct = {quantity,userName,email,name,picture,description,minimumOrderQuantity,availableQuantity,price,address,phone}
     
-            fetch('https://tranquil-anchorage-32269.herokuapp.com/order', {
+            fetch('https://car-manufacturer-server-website.vercel.app/order', {
                 method: "POST",
                 headers: {
                     'content-type': 'application/json'

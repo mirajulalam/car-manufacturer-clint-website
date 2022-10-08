@@ -27,7 +27,7 @@ const AddAReview = () => {
                         img: img
                     }
                     // send to your database
-                    const url = 'https://tranquil-anchorage-32269.herokuapp.com/review';
+                    const url = 'https://car-manufacturer-server-website.vercel.app/review';
                     fetch(url, {
                         method: "POST",
                         headers: {

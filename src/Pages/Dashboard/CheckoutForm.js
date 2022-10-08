@@ -14,7 +14,7 @@ const CheckoutForm = ({ order }) => {
     const { _id, price, email, name } = order;
 
     useEffect(() => {
-        fetch('https://tranquil-anchorage-32269.herokuapp.com/create-payment-intent', {
+        fetch('https://car-manufacturer-server-website.vercel.app/create-payment-intent', {
             method: "POST",
             headers: {
                 'content-type': 'application/json',
@@ -83,7 +83,7 @@ const CheckoutForm = ({ order }) => {
                 order: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`https://tranquil-anchorage-32269.herokuapp.com/order/${_id}`, {
+            fetch(`https://car-manufacturer-server-website.vercel.app/order/${_id}`, {
                 method: "PATCH",
                 headers: {
                     'content-type': 'application/json',

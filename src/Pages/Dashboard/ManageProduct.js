@@ -14,7 +14,7 @@ const ManageProduct = ({ manage }) => {
           })
           .then((checkout) => {
             if (checkout) {
-                const url = `https://tranquil-anchorage-32269.herokuapp.com/product/${id}`;
+                const url = `https://car-manufacturer-server-website.vercel.app/product/${id}`;
                 fetch(url, {
                     method: "DELETE",
                 })

@@ -4,7 +4,7 @@ import { useQuery } from 'react-query';
 import UsersDetail from './UsersDetail';
 
 const Users = () => {
-    const { data: users, isLoading, refetch } = useQuery("users", () => fetch('https://tranquil-anchorage-32269.herokuapp.com/user', {
+    const { data: users, isLoading, refetch } = useQuery("users", () => fetch('https://car-manufacturer-server-website.vercel.app/user', {
         method: "GET",
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`

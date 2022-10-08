@@ -22,7 +22,7 @@ const AddAProduct = () => {
             picture
         }
 
-        fetch('https://tranquil-anchorage-32269.herokuapp.com/product', {
+        fetch('https://car-manufacturer-server-website.vercel.app/product', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

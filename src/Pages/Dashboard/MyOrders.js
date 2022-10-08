@@ -11,7 +11,7 @@ const MyOrders = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`https://tranquil-anchorage-32269.herokuapp.com/order/${user?.email}`, {
+            fetch(`https://car-manufacturer-server-website.vercel.app/order/${user?.email}`, {
                 method: "GET",
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -34,7 +34,7 @@ const MyOrders = () => {
           })
           .then((checkout) => {
                 if (checkout) {
-                    const url = `https://tranquil-anchorage-32269.herokuapp.com/order/${id}`;
+                    const url = `https://car-manufacturer-server-website.vercel.app/order/${id}`;
                     console.log(url);
                     fetch(url, {
                         method: "DELETE",

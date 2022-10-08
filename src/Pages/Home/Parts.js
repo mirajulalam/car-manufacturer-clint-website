@@ -5,7 +5,7 @@ const Parts = () => {
     const [parts, setParts] = useState([]);
 
     useEffect(() => {
-        fetch('https://tranquil-anchorage-32269.herokuapp.com/product')
+        fetch('https://car-manufacturer-server-website.vercel.app/product')
             .then(res => res.json())
             .then(data => setParts(data))
     }, [])

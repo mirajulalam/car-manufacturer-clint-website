@@ -21,7 +21,7 @@ const MyProfile = () => {
             location,
             link,
         }
-        fetch(`https://tranquil-anchorage-32269.herokuapp.com/userdetail/${user?.email}`, {
+        fetch(`https://car-manufacturer-server-website.vercel.app/userdetail/${user?.email}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'

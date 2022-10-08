@@ -10,7 +10,7 @@ const ManageOrders = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`https://tranquil-anchorage-32269.herokuapp.com/allOrder`, {
+            fetch(`https://car-manufacturer-server-website.vercel.app/allOrder`, {
                 method: "GET",
             })
                 .then(res => res.json())
@@ -30,7 +30,7 @@ const ManageOrders = () => {
           })
           .then((checkout) => {
             if (checkout) {
-                const url = `https://tranquil-anchorage-32269.herokuapp.com/order/${id}`;
+                const url = `https://car-manufacturer-server-website.vercel.app/order/${id}`;
                 fetch(url, {
                 method: "DELETE",
                 })

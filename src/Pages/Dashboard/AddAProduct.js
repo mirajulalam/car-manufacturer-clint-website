@@ -22,7 +22,7 @@ const AddAProduct = () => {
             picture
         }
 
-        fetch('https://car-manufacturer-server-website.vercel.app/product', {
+        fetch('https://car-parts-manufacturer.onrender.com/product', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

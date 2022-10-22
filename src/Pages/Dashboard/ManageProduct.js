@@ -14,7 +14,7 @@ const ManageProduct = ({ manage }) => {
           })
           .then((checkout) => {
             if (checkout) {
-                const url = `https://car-manufacturer-server-website.vercel.app/product/${id}`;
+                const url = `https://car-parts-manufacturer.onrender.com/product/${id}`;
                 fetch(url, {
                     method: "DELETE",
                 })

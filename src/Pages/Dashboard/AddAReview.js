@@ -27,7 +27,7 @@ const AddAReview = () => {
                         img: img
                     }
                     // send to your database
-                    const url = 'https://car-manufacturer-server-website.vercel.app/review';
+                    const url = 'https://car-parts-manufacturer.onrender.com/review';
                     fetch(url, {
                         method: "POST",
                         headers: {

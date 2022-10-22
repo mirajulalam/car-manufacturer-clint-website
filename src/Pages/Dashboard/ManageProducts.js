@@ -5,7 +5,7 @@ const ManageProducts = () => {
     const [manageProduct, setManageProduct] = useState([]);
     console.log(manageProduct);
     useEffect(() => {
-        fetch('https://car-manufacturer-server-website.vercel.app/product')
+        fetch('https://car-parts-manufacturer.onrender.com/product')
             .then(res => res.json())
             .then(data => setManageProduct(data))
     }, [manageProduct]);

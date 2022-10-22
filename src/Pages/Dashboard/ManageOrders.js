@@ -10,7 +10,7 @@ const ManageOrders = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`https://car-manufacturer-server-website.vercel.app/allOrder`, {
+            fetch(`https://car-parts-manufacturer.onrender.com/allOrder`, {
                 method: "GET",
             })
                 .then(res => res.json())
@@ -30,7 +30,7 @@ const ManageOrders = () => {
           })
           .then((checkout) => {
             if (checkout) {
-                const url = `https://car-manufacturer-server-website.vercel.app/order/${id}`;
+                const url = `https://car-parts-manufacturer.onrender.com/order/${id}`;
                 fetch(url, {
                 method: "DELETE",
                 })

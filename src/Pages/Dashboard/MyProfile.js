@@ -21,7 +21,7 @@ const MyProfile = () => {
             location,
             link,
         }
-        fetch(`https://car-manufacturer-server-website.vercel.app/userdetail/${user?.email}`, {
+        fetch(`https://car-parts-manufacturer.onrender.com/userdetail/${user?.email}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'
